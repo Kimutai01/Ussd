@@ -25,6 +25,8 @@ router.post("/", async (req, res) => {
       ${response}`;
   }
   if (text === "10") {
+    const res = await fetch("http://127.0.0.1:3000/counties");
+    const data = await res.json();
     for (let i = 9; i < 19; i++) {
       response += `${i + 1}. ${data[i].name}
           `;
@@ -36,6 +38,8 @@ router.post("/", async (req, res) => {
       ${response}`;
   }
   if (text === "10*20") {
+    const res = await fetch("http://127.0.0.1:3000/counties");
+    const data = await res.json();
     for (let i = 19; i < 29; i++) {
       response += `${i + 1}. ${data[i].name}
           `;
@@ -47,6 +51,8 @@ router.post("/", async (req, res) => {
       ${response}`;
   }
   if (text === "10*20*30") {
+    const res = await fetch("http://127.0.0.1:3000/counties");
+    const data = await res.json();
     for (let i = 29; i < 39; i++) {
       response += `${i + 1}. ${data[i].name}
           `;
@@ -58,6 +64,8 @@ router.post("/", async (req, res) => {
       ${response}`;
   }
   if (text === "10*20*30*40") {
+    const res = await fetch("http://127.0.0.1:3000/counties");
+    const data = await res.json();
     for (let i = 39; i < 47; i++) {
       response += `${i + 1}. ${data[i].name}
           `;
@@ -67,6 +75,8 @@ router.post("/", async (req, res) => {
       ${response}`;
   }
   console.log(text);
+  const counties = new Map();
+  console.log(counties);
   if (text === "1") {
     const res = await fetch(`http://127.0.0.1:3000/counties/${text}`);
     const data = await res.json();
